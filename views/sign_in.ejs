@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!-- root element -->
+<html lang = "en">
+
+    <!-- head element -->
+    <head >
+        <!-- webpage title -->
+        <title>
+            Blogville
+        </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- linking bootstrap document -->
+         
+        <link rel="stylesheet"  href="styles.css" >
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+    </head>
+
+    <!-- body section -->
+    
+    <div class="container-fluid full-width-bg bg-dark bg-gradient p-5 text-white ">
+        <div class = "container " id = "header">
+            <div class = "row font-effect-3d-float ">
+                <h1 >Unique Blog Website!</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <body class="d-flex flex-column min-vh-100 justify-content-center">
+        <div class="row mx-auto">     
+            <form action ="/submitSign_in" onsubmit="this.submit();this.reset();return false;" method="POST" id="sign_inForm">
+                <h3>Login:</h3>
+                <div class = "form-group">
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class = "form-group">
+                    <label for="password">Password:</label><br>
+                    <input type="text" name="password" id="password" required>
+                </div>
+                <br>
+                <div>
+                    <form action ="/submitSign_in" onsubmit="this.submit();this.reset();return false;" method="POST" id="sign_inForm">
+                        <button id ="submitBtn" class="btn btn-primary" type="submit" >Submit</button>
+                    </form>
+                    <form action="/exit" method="GET" style="display:inline;">
+                        <button class="btn btn-secondary" type = "submit" value="cancel" formnovalidate>Exit</button>
+                    </form>
+                </div>
+                <br>
+                
+            </form>
+        </div>
+        <br> 
+        <br> 
+        
+        <div class = "row mx-auto">
+            <%if (locals.invalid_user) { %>
+            <h4>Username or Password is incorrect. Try again or create a new account.</h4>
+            <% } %>
+        </div>
+        <div class="mt-auto bg-dark bg-gradient p-5 text-white ">
+            <div class = "container-fluid" id = "footer">
+                <div class = "row font-effect-3d-float ">
+                    <h2 ></h2>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="/app.js"></script>
+    </body>   
+    
+</html>
